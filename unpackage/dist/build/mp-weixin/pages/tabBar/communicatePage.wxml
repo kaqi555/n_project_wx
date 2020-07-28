@@ -1,0 +1,1 @@
+<view><rwj-tabbar vue-id="481071fc-1" current-page="{{3}}" bind:__l="__l"></rwj-tabbar></view>

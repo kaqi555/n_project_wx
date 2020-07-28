@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "sunui-upimg": "/components/sunui-upimg/sunui-upimg",
+    "sunuiupimg": "/components/sunui-upimg/sunui-upimg"
+  }
+}
