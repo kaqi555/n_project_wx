@@ -1,0 +1,1 @@
+<view><personalinfo vue-id="9f625622-1" info="{{personalInfo}}" fans="{{personalFans}}" attention="{{personalAttention}}" data-event-opts="{{[['^changeBgpic',[['changeBgpic']]],['^changeHeadPic',[['changeHeadPic']]]]}}" bind:changeBgpic="__e" bind:changeHeadPic="__e" bind:__l="__l"></personalinfo></view>

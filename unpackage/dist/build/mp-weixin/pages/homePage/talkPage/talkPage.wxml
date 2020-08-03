@@ -1,1 +1,1 @@
-<view><block wx:for="{{talks}}" wx:for-item="talk" wx:for-index="__i0__"><view><talk vue-id="{{'bb202c42-1-'+__i0__}}" items="{{talk}}" bind:__l="__l"></talk><block wx:if="{{showLoadMore}}"><view class="uni-loadmore">{{loadMoreText}}</view></block></view></block></view>
+<view><block wx:for="{{talks}}" wx:for-item="talk" wx:for-index="__i0__"><view><talk vue-id="{{'bb202c42-1-'+__i0__}}" items="{{talk}}" bind:__l="__l"></talk><block wx:if="{{showLoad}}"><view class="{{['cu-load bg-white',!isLoad?'loading':'over']}}"></view></block></view></block></view>

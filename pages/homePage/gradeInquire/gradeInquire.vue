@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view style="background-color: white;margin:14rpx">
 		<view class="headerSelect">
 			<picker class="headerItems" mode="selector" :value="index" :range="arrayPicker" @change="getGrade">
 				<view class="headerItems">
@@ -10,6 +10,7 @@
 		</view>
 		<view class="headerUser">
 			<view class="userText">
+				<text class="cuIcon-upstage text-orange"></text>
 				<text>成绩单</text>
 			</view>
 			<view class="userInfo">
@@ -36,10 +37,10 @@
 			return {
 				arrayPicker: [],
 				index: '0',
-				userName: this.$store.state.userHutName,
-				userSno:this.$store.state.userSno,
+				userName: this.$store.state.user.userHutName,
+				userSno:this.$store.state.user.userSno,
 				params: {
-					token: this.$store.state.token
+					token: this.$store.state.user.token
 				},
 				tableData: [],
 				emptyText: '暂无数据',
@@ -66,7 +67,7 @@
 			}
 		},
 		created() {
-			let startYear = this.$store.state.userStartYear
+			let startYear = this.$store.state.user.userStartYear
 			let temp
 			startYear++
 			startYear--
@@ -118,25 +119,32 @@
 
 <style>
 .headerSelect {
+	width:100%;
+	margin:30rpx;
+	font-weight:500;
+	height:70rpx;
+}
+.headerItems{
+	padding-top:17rpx;
 	display: flex;
 	flex-direction: row;
-	align-items: center;
 }
-.headerItems {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-}
+
 .headerUser {
 	display: flex;
 	flex-direction: column;
 }
 .userText {
-	font-size: 50rpx;
+	width:100%;
+	text-align: center;
+	font-size: 40rpx;
 }
-.userInfo {
-	font-size: 30rpx;
+.userInfo{
 	display: flex;
-	flex-direction: column;
+	justify-content: space-between;
+}
+.userInfo text{
+	font-size: 30rpx;
+	margin:30rpx;
 }
 </style>

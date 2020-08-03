@@ -42,15 +42,15 @@
 		},
 		data() {
 			return {
-				headPic: this.$store.state.userPic,
-				username: this.$store.state.userName,
+				headPic: this.$store.state.user.userPic,
+				username: this.$store.state.user.userName,
 				image: [],
 				value: '',
 				textFocus: true,
 				url: 'https://www.hut-idea.top/resources/upload',
 				params: {
-					token: this.$store.state.token,
-					id: this.$store.state.userId
+					token: this.$store.state.user.token,
+					id: this.$store.state.user.userId
 				},
 			}
 		},

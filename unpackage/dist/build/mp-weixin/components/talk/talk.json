@@ -1,7 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "talkdetail": "/components/talk/talkDetail",
-    "chat-input": "/components/im-chat/chatinput"
+    "talkdetail": "/components/talk/talkDetail"
   }
 }

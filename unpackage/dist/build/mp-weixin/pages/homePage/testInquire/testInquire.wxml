@@ -1,0 +1,1 @@
+<view><block wx:if="{{testData.length===0}}"><view><view class="flex justify-center imgNull" style="margin-top:300rpx;"><image style="width:100px;height:80px;" src="../../../static/img/not.png" mode></image><text>暂无数据</text></view></view></block></view>

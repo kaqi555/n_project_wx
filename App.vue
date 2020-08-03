@@ -5,7 +5,7 @@ export default {
 		let user = uni.getStorageSync('user')
 		//console.log(id)
 		console.log(user)
-		if(user.token  != undefined || user.token != null) {
+		if(user.token  != undefined && user.rxnf != undefined) {
 			let data = {
 				id: user.id,
 				username: user.username,
@@ -13,7 +13,11 @@ export default {
 				token: user.token,
 				xh: user.xh,
 				rxnf: user.rxnf,
-				xm: user.xm
+				xm: user.xm,
+				xb: user.xb,
+				bj: user.bj,
+				yxmc: user.yxmc,
+				word: user.word
 			}
 			console.log(data)
 			this.$store.dispatch('setStorage', data)

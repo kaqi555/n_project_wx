@@ -3,34 +3,34 @@
 		<view class="cu-list menu card-menu margin-top">
 			<view class="cu-item" :class="menuArrow?'arrow':''">
 				<view class="content">
-					<text class="cuIcon-locationfill text-grey"></text>
-					<text class="text-grey">教室地点</text>
+					<text class="cuIcon-locationfill  text-orange"></text>
+					<text class="">教室地点</text>
 				</view>
-				<view class="content">
+				<view class="content  text-grey">
 					<text>{{classRoom}}</text>
 				</view>
 			</view>
 			<view class="cu-item" :class="menuArrow?'arrow':''">
 				<view class="content">
-					<text class="cuIcon-timefill text-grey"></text>
-					<text class="text-grey">查询时间</text>
+					<text class="cuIcon-timefill text-orange"></text>
+					<text class="">查询时间</text>
 				</view>
-				<view class="content">
+				<view class="content text-grey">
 					<text>{{time}}</text>
 				</view>
 			</view>
 		</view>
 		<view class="solids-bottom padding-xs flex align-center">
 			<view class="flex-sub text-center">
-				<view class="solid-bottom text-xl padding">
+				<view class="text-xl padding">
 					<text class="text-black text-bold">{{classRoom}}</text>
 				</view>
 			</view>
 		</view>
-		<view class="solids-bottom padding-xs flex align-center" v-for="item in data">
+		<view class="solids-bottom padding-xs flex align-center class-style-result" v-for="item in data">
 			<view class="padding">{{item.jsmc}}</view>
-			<view class="flex-sub text-center">
-				<view class="padding">容量:{{item.zws}}</view>
+			<view class=" text-center">
+				<view class="padding" style="color: green;">容量:{{item.zws}}</view>
 			</view>
 		</view>
 	</view>
@@ -46,8 +46,8 @@
 			}
 		},
 		created() {
-			    console.log(this.$store.state.roomData)
-				switch(this.$store.state.roomData[1]) {
+			    console.log(this.$store.state.global.roomData)
+				switch(this.$store.state.global.roomData[1]) {
 					case 'allday':
 					this.time = '全天'
 					break
@@ -64,20 +64,18 @@
 					this.time = ''
 					break
 					default:
-					if(typeof this.$store.state.roomData[1] != 'undefined') {
-					this.time = this.$store.state.roomData[1].match(/\d{2}/g)
+					if(typeof this.$store.state.global.roomData[1] != 'undefined') {
+					this.time = this.$store.state.global.roomData[1].match(/\d{2}/g)
 					this.time = this.time[0] + '-' +this.time[1] + '节'
 					}
 					//console.log(this.time.match(/\d{2}/g))
 				}
-				this.data = this.$store.state.roomData[0].jsList
-				//this.time = this.$store.state.roomData[1]
-				this.classRoom = this.$store.state.roomData[0].jxl
+				this.data = this.$store.state.global.roomData[0].jsList
+				//this.time = this.$store.state.user.roomData[1]
+				this.classRoom = this.$store.state.global.roomData[0].jxl
 		},
 		onUnload() {
-			uni.$off('roomData',()=>{
-					console.log('关闭监听选择收货地址');
-				})
+			
 		},
 		methods: {
 			
@@ -86,5 +84,9 @@
 </script>
 
 <style>
-
+.class-style-result{
+	display: flex;
+	justify-content: space-between;
+	background-color: white;
+}
 </style>

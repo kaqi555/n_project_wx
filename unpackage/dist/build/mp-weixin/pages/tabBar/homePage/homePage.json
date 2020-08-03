@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "工大站",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "talk": "/components/talk/talk",
+    "uni-swiper-dot": "/components/uni-swiper-dot/uni-swiper-dot",
+    "uni-tag": "/components/uni-tag/uni-tag"
+  }
+}

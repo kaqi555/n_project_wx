@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "personalattention": "/components/attention/attention"
+  }
+}

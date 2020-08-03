@@ -1,0 +1,1 @@
+<view><personalfans vue-id="444b0b1e-1" fans="{{fans}}" data-event-opts="{{[['^changButton',[['changButton']]]]}}" bind:changButton="__e" bind:__l="__l"></personalfans></view>

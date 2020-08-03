@@ -9,14 +9,14 @@
 		{
        	"path": "pages/tabBar/homePage/homePage",
 		"style": {
-			"navigationBarTitleText": "川音站",
+			"navigationBarTitleText": "工大站",
 			"enablePullDownRefresh" : true
 		}
 	   },
 	   {
 	   		"path":"pages/tabBar/collectionPage/collectionPage",
 	   		"style": {
-	   			"navigationBarTitleText":"收藏"
+	   			"navigationBarTitleText":"关系"
 	   		}
 	   },
 	   {
@@ -46,39 +46,57 @@
         }
 		,{
 		    "path" : "pages/homePage/classSchedulePage/classSchedulePage",
-		    "style" : {}
+		    "style" : {
+				"navigationBarTitleText":"课程表"
+			}
 		}
         ,{
             "path" : "pages/homePage/studyMaterialsPage/studyMaterialsPage",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText":"学习资料"
+			}
         }
         ,{
             "path" : "pages/homePage/socialActivitypage/socialActivitypage",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText":"活动"
+			}
         }
         ,{
             "path" : "pages/homePage/releaseJobPage/releaseJobPage",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText":"发布/求职"
+			}
         }
         ,{
             "path" : "pages/homePage/equipmentTradePage/equipmentTradePage",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText":"设备交易"
+			}
         }
         ,{
             "path" : "pages/releasePage/releaseTalk/releaseTalk",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText":"发布说说"
+			}
         }
         ,{
             "path" : "pages/releasePage/releaseStudy/releaseStudy",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText":"发布学习资料"
+			}
         }
         ,{
             "path" : "pages/releasePage/releaseJob/releaseJob",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText":"发布求职"
+			}
         }
         ,{
             "path" : "pages/releasePage/releaseTransaction/releaseTransaction",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText":"发布设备交易"
+			}
         }
         ,{
             "path" : "pages/homePage/gradeInquire/gradeInquire",
@@ -88,16 +106,38 @@
         }
         ,{
             "path" : "pages/homePage/classroomFree/classroomFree",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText":"空闲教室"
+			}
         }
         ,{
             "path" : "pages/homePage/classroomFree/freeDetail",
+            "style" : {
+				"navigationBarTitleText":"查询结果"
+			}
+        }
+        ,{
+            "path" : "pages/homePage/testInquire/testInquire",
+            "style" : {
+				"navigationBarTitleText":"成绩查询"
+			}
+        }
+        ,{
+            "path" : "pages/PersonalPage/personalAttention/personalAttention",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/PersonalPage/personalFans/personalFans",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/PersonalPage/personalInfo/personalInfo",
             "style" : {}
         }
     ],
 	  "tabBar": {
 	      "color": "#7A7E83",
-	      "selectedColor": "#3cc51f",
+	      "selectedColor": "#000000",
 	      "borderStyle": "black",
 	      "backgroundColor": "#ffffff",
 	      "list": [{
@@ -109,7 +149,7 @@
 	          "pagePath": "pages/tabBar/collectionPage/collectionPage",
 	          "iconPath": "static/img/favor.png",
 	          "selectedIconPath": "static/img/tabfavorFill.png",
-	          "text": "收藏"
+	          "text": "关系"
 	      },
 		  {
 			  "pagePath": "pages/tabBar/releasePage/releasePage",
@@ -133,7 +173,7 @@
 	   "globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#007AFF",
+		"navigationBarBackgroundColor": "#d00000",
 		"backgroundColor": "#FFFFFF"
 	},
 	"condition" : { //模式配置，仅开发期间生效

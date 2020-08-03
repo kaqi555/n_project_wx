@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "发布说说",
   "usingComponents": {
     "sunui-upimg": "/components/sunui-upimg/sunui-upimg",
     "sunuiupimg": "/components/sunui-upimg/sunui-upimg"

@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "成绩查询",
   "usingComponents": {
-    "uni-icons": "/components/uni-icons/uni-icons"
+    "uni-icons": "/components/uni-icons/uni-icons",
+    "z-table": "/components/z-table/z-table"
   }
 }

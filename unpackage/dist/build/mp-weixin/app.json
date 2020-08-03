@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/loginPage/loginPage",
-    "pages/tabBar/homePage",
-    "pages/tabBar/collectionPage",
-    "pages/tabBar/releasePage",
-    "pages/tabBar/communicatePage",
-    "pages/tabBar/PersonalPage",
+    "pages/tabBar/homePage/homePage",
+    "pages/tabBar/collectionPage/collectionPage",
+    "pages/tabBar/releasePage/releasePage",
+    "pages/tabBar/communicationPage/communicationPage",
+    "pages/tabBar/personalPage/personalPage",
     "pages/homePage/talkPage/talkPage",
     "pages/homePage/classSchedulePage/classSchedulePage",
     "pages/homePage/studyMaterialsPage/studyMaterialsPage",
@@ -16,47 +16,53 @@
     "pages/releasePage/releaseStudy/releaseStudy",
     "pages/releasePage/releaseJob/releaseJob",
     "pages/releasePage/releaseTransaction/releaseTransaction",
-    "pages/homePage/gradeInquire/gradeInquire"
+    "pages/homePage/gradeInquire/gradeInquire",
+    "pages/homePage/classroomFree/classroomFree",
+    "pages/homePage/classroomFree/freeDetail",
+    "pages/homePage/testInquire/testInquire",
+    "pages/PersonalPage/personalAttention/personalAttention",
+    "pages/PersonalPage/personalFans/personalFans",
+    "pages/PersonalPage/personalInfo/personalInfo"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#007AFF",
+    "navigationBarBackgroundColor": "#d00000",
     "backgroundColor": "#FFFFFF"
   },
   "tabBar": {
     "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
+    "selectedColor": "#000000",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/tabBar/homePage",
+        "pagePath": "pages/tabBar/homePage/homePage",
         "iconPath": "static/img/index.png",
         "selectedIconPath": "static/img/indexFill.png",
         "text": "首页"
       },
       {
-        "pagePath": "pages/tabBar/collectionPage",
+        "pagePath": "pages/tabBar/collectionPage/collectionPage",
         "iconPath": "static/img/favor.png",
         "selectedIconPath": "static/img/tabfavorFill.png",
-        "text": "收藏"
+        "text": "关系"
       },
       {
-        "pagePath": "pages/tabBar/releasePage",
+        "pagePath": "pages/tabBar/releasePage/releasePage",
         "iconPath": "static/img/publish.jpeg",
         "selectedIconPath": "static/img/publish.jpeg",
         "text": "发布"
       },
       {
-        "pagePath": "pages/tabBar/communicatePage",
+        "pagePath": "pages/tabBar/communicationPage/communicationPage",
         "iconPath": "static/img/comment.png",
         "selectedIconPath": "static/img/messageFill.png",
         "text": "消息"
       },
       {
-        "pagePath": "pages/tabBar/PersonalPage",
+        "pagePath": "pages/tabBar/personalPage/personalPage",
         "iconPath": "static/img/my.png",
         "selectedIconPath": "static/img/myFill.png",
         "text": "我的"
@@ -67,6 +73,5 @@
   "uniStatistics": {
     "enable": true
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

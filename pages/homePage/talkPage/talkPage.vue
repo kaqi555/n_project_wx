@@ -26,8 +26,8 @@
 				temp: [],
 				page: 1,
 				params: {
-					token: this.$store.state.token,
-					id: this.$store.state.userId
+					token: this.$store.state.user.token,
+					id: this.$store.state.user.userId
 				},
 			}
 		},
@@ -56,23 +56,41 @@
 		},
 		methods: {
 			getNewTalks() {
-				apiTalk.getNewTalks(this.params, this.page).then(response => {
-					this.temp = response.data
+				let data = this.params
+				function flatten(arr,id) {
+				var res = [];
+				for (let i = 0; i < arr.length; i++) {
+				if (arr[i].talks.length != 0) {
+				   res = res.concat(flatten(arr[i].talks,id));
+				}
+			    if(arr[i].talked_username !== null) {
+				   arr[i].username = arr[i].username
+				}
+				   arr[i].talkId = id;
+				   res.push(arr[i]);
+				}
+					return res;
+				}
+				data.type = '0'
+				apiTalk.getNewTalks(data, this.page).then(response => {
+					this.temp = response.data.talks
 					this.page += 1
 					for(let i=0; i<this.temp.length; i++) {
+						let num = 0
 						if(this.temp[i].pics) {
 						this.temp[i].pics = this.temp[i].pics.split(',')
-					    }
-					    if(this.temp[i].talks.length != 0) {
-							for(let j=0; j<this.temp[i].talks.length; j++) {
-								this.temp[i].talks[j].index = i;
-							}
 						}
-						this.temp[i].userId = this.$store.state.userId
+						num += this.temp[i].talks.length
+						for(let j=0; j<this.temp[i].talks.length; j++) {
+							num += this.temp[i].talks[j].talks.length
+							flatten(this.temp[i].talks[j].talks)
+						}
+						this.temp[i].talkLength = num
+						this.temp[i].userId = this.$store.state.user.userId
 					}
 					this.talks.push(this.temp)
 				}).catch(err => {
-					con
+					
 				})
 			}
 		}

@@ -45,10 +45,12 @@
 					data.id = response.data.id
 					data.headPic = response.data.headPic
 					data.username= response.data.username
+					data.word= response.data.word
 					})
 					this.$store.dispatch('getHutUser', response.data.token).then(response => {
 						response.data.token = data.token
 						response.data.id = data.id
+						response.data.word = data.word
 						response.data.headPic = data.headPic
 						response.data.username = data.username
 						this.$store.dispatch('setStorage', response.data)

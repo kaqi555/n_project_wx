@@ -10,9 +10,9 @@ const request = (config) => {
 		uni.request(config).then(responses => {
 			// 异常
 			if (responses[0]) {
+				//resolve(responses)
 				reject({message : "网络超时"});
 			} else {
-				console.log(responses)
 				let response = responses[1].data; // 如果返回的结果是data.data的，嫌麻烦可以用这个，return res,这样只返回一个data
 				resolve(response);
 			}

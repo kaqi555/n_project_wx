@@ -8,7 +8,7 @@
 				</view>
 			</picker>
 		</view>
-		<view class="cu-form-group margin-top">
+		<view class="cu-form-group class-top-style">
 			<view class="title">校区</view>
 			<picker @change="PickerChangeCollege" :value="indexCollege" :range="pickerCollege">
 				<view class="picker">
@@ -16,7 +16,7 @@
 				</view>
 			</picker>
 		</view>
-		<view class="cu-form-group margin-top">
+		<view class="cu-form-group  class-top-style">
 			<view class="title">教学楼</view>
 			<picker @change="PickerChangeRoom" :value="indexRoom" :range="pickerRomDetail">
 				<view class="picker">
@@ -24,7 +24,7 @@
 				</view>
 			</picker>
 		</view>
-		<view class="cu-form-group margin-top">
+		<view class="cu-form-group  class-top-style">
 			<view class="title">开始节次</view>
 			<picker @change="PickerChangeStart" :value="indexStart" :range="pickerStart">
 				<view class="picker">
@@ -32,16 +32,16 @@
 				</view>
 			</picker>
 		</view>
-		<view class="cu-form-group margin-top">
-			<view class="title">结束节次</view>
+		<view class="cu-form-group  class-top-style">
+			<view class="title" >结束节次</view>
 			<picker @change="PickerChangeEnd" :value="indexEnd" :range="pickerEnd">
 				<view class="picker">
 					{{indexEnd>-1?pickerEnd[indexEnd]:'请选择结束节次'}}
 				</view>
 			</picker>
 		</view>
-		<view class="cu-form-group margin-top">
-			<view class="title">教室人数</view>
+		<view class="cu-form-group class-top-style">
+			<view class="title ">教室人数</view>
 			<picker @change="PickerChangeNumber" :value="indexNumber" :range="pickerNumber">
 				<view class="picker">
 					{{indexNumber>-1?pickerNumber[indexNumber]:'请选择人数'}}
@@ -51,9 +51,9 @@
 		<view class="padding flex flex-direction">
 		<button class="cu-btn bg-red margin-tb-sm lg" @click="inquireRoom">查询</button>
 		</view>
-		<view class="grid col-3 padding-lr">
-			<view class="margin-tb-sm text-center" v-for="(item,index) in buttonList" :key="index" v-if="item.name!='white'">
-				<button @click="selectTime(item)" class="cu-btn round  lg" :class="['bg-' + item.name , shadow?'shadow':'']">{{item.title}}</button>
+		<view class="padding-lr date-box">
+			<view class="margin-tb-sm text-center bg-red date-choose" v-for="(item,index) in buttonList" :key="index" v-if="item.name!='white'">
+				<view @click="selectTime(item)" class="cu-btn round  lg" :class="['bg-' + item.name , shadow?'shadow':'']">{{item.title}}</view>
 			</view>
 		</view>
 	</view>
@@ -61,6 +61,7 @@
 
 <script>
 	import apiHome from '@/api/home.js'
+	import {formatDayTime} from '@/common/common.js'
 	export default {
 		data() {
 			return {
@@ -105,7 +106,8 @@
 		},
 		created() {
 			let date = new Date()
-			this.date = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate()
+			this.date = formatDayTime()
+			console.log(this.date)
 		    let event = {
 				detail: {
 					value: 0
@@ -161,7 +163,8 @@
 			},
 			inquireRoom() {
 				let data = this.params
-				data.time = this.date
+				let temp = this.date.split('-')
+				data.time = formatDayTime(new Date(temp[0], temp[1]-1, temp[2]).getTime())
 				data.xqid = this.xqid
 				data.jxlid = this.pickerRom[this.indexRoom].jzwid
 				if(this.time !== '') {
@@ -183,5 +186,25 @@
 </script>
 
 <style>
+	.date-box{
+		display:flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+.class-top-style{
+	margin-top:6rpx
+}
+.date-choose{
+	width:33.3%;
+	border-radius: 20px;
+	background-color: white;
+	color:red;
 
+	margin-left:30rpx;
+}
+.date-choose:hover{
+	background-color: red;
+	color:white;
+	opacity: 0.8;
+}
 </style>

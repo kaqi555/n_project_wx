@@ -1,0 +1,1 @@
+.date-box{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-flex-wrap:wrap;flex-wrap:wrap}.class-top-style{margin-top:6rpx}.date-choose{width:33.3%;border-radius:20px;background-color:#fff;color:red;margin-left:30rpx}.date-choose:hover{background-color:red;color:#fff;opacity:.8}
